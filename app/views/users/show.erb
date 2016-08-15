@@ -20,7 +20,14 @@
 
 
 <div class = "Hdiv"> 
-
+    <p>High dividend stocks</p>
+    <ul>
+      <% 10.times  do |i| index = @hdiv.length-1-i %>
+      <li>
+      Name: <%= @hdiv[index][2] %>,     Symbol: <%= @hdiv[index][0] %>,     Dividend: <%= @hdiv[index][1] %>,   Price: <%= @hdiv[index][3] %>,  Change: <%= @hdiv[index][4] %>
+      </li>
+      <% end %>
+    </ul>
 
 
 
