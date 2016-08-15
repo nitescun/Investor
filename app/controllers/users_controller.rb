@@ -18,15 +18,17 @@ get '/users/:id' do
   @user.stocks.each do |current_stock|
     @stocks << current_stock.quote
   end
-
-  # p "******************************"
-  # p @stocks
   @stock = StockQuote::Stock.quote(@stocks)
-  # @stock = []
-  # ustock = @user.stocks
-  # ustock.each do |current_stock|
-  #  @stock << StockQuote::Stock.quote(current_stock)
-  # end
+  @all_stocks_quote = []
+  Stock.all.each do |current_stock|
+    @all_stocks_quote << current_stock.quote
+  end
+  @all_stocks = StockQuote::Stock.quote(@all_stocks_quote)
+  hdiv_raw = []
+  @all_stocks.each do |current_stock|
+    hdiv_raw << [current_stock.dividend_yield,current_stock.quote]
+  end 
+  @hdiv = hdiv_raw.sort
   erb :'users/show'
 end
 
