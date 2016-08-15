@@ -25,11 +25,16 @@ get '/users/:id' do
     @all_stocks_quote << current_stock.quote
   end
   @all_stocks = StockQuote::Stock.quote(@all_stocks_quote)
-  hdiv_raw = []
+  @hdiv_raw = []
   @all_stocks.each do |current_stock|
-    hdiv_raw << [current_stock.symbol, current_stock.dividend_yield]
+    if !current_stock.dividend_yield 
+     @hdiv_raw << [current_stock.symbol, 0, current_stock.name, current_stock.bid, current_stock.percent_change]
+    else
+     @hdiv_raw << [current_stock.symbol, current_stock.dividend_yield, current_stock.name, current_stock.bid, current_stock.percent_change]
+   end
   end 
-  @hdiv = hdiv_raw.sort {|a,b| b[1] <=> a[1]}
+  @hdiv = @hdiv_raw.sort_by {|e| e[1]}
+#  @hdiv = @hdiv_raw.sort {|a,b| b[1] <=> a[1]}
   erb :'users/show'
 end
 
