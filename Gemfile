@@ -21,6 +21,8 @@ gem 'bcrypt'
 
 gem 'rspec'
 
+gem "stock_quote"
+
 group :test do
   gem 'faker'
   gem 'rspec'

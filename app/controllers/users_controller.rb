@@ -1,3 +1,5 @@
+require 'stock_quote'
+
 # Users INDEX
 get '/users' do
   @users = User.all
@@ -12,6 +14,19 @@ end
 # Users SHOW
 get '/users/:id' do
   @user = User.find(params[:id])
+  @stocks = []
+  @user.stocks.each do |current_stock|
+    @stocks << current_stock.quote
+  end
+
+  # p "******************************"
+  # p @stocks
+  @stock = StockQuote::Stock.quote(@stocks)
+  # @stock = []
+  # ustock = @user.stocks
+  # ustock.each do |current_stock|
+  #  @stock << StockQuote::Stock.quote(current_stock)
+  # end
   erb :'users/show'
 end
 

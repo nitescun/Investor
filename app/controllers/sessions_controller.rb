@@ -7,11 +7,14 @@ end
 post '/sessions' do
   @user = User.find_by_email(params[:email])
   if @user && @user.authenticate(params[:password])
+    p "gooooooooooooooooood"
     session[:id] = @user.id
     redirect "/users/#{@user.id}"
   else
+
+    p "Errrrrrrrrrrrrrrrrrrrrrrrrr"
     @errors = ["Login NonLEgit, please try again..... "]
-    erb :'sessions/new'
+    redirect'/users'
   end
 end
 
