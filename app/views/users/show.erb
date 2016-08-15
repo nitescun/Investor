@@ -1,17 +1,19 @@
 <h1>Welcome back <%= current_user.username.capitalize %>!</h1>
-
-<p>Here is the list of your favorite stocks</p>
-<ul>
-  <% @stock.each  do |current_stock| %>
-  <li>
-  Name: <%= current_stock.name %>, Symbol: <%= current_stock.symbol %>,   Price: <%= current_stock.bid %>, Change: <%= current_stock.percent_change %>
-  </li>
-  <% end %>
-</ul>
+<%if @stock%>
+  <p>Here is the list of your favorite stocks</p>
+  <ul>
+    <% @stock.each  do |current_stock| %>
+    <li>
+    Name: <%= current_stock.name %>, Symbol: <%= current_stock.symbol %>,   Price: <%= current_stock.bid %>, Change: <%= current_stock.percent_change %>
+    </li>
+    <% end %>
+  </ul>
+<%else%>
+  <p>You have do not have favorite stocks.</p>
+<%end%>
 <h2>Please select the investment you wish to make.</h2>
 <form id = "investment_type">
 	<input class = "High dividend" type="submit" value="High dividend">
-	<input class = "Stable income" type="submit" value="Stable income">
 	<input class = "Value" type="submit" value="Value">
 	<input class = "Growth" type="submit" value="Growth">
 	<input class = "Analists recomended" type="submit" value="Analists recomended">
