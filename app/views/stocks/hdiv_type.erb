@@ -1,0 +1,21 @@
+<div class = "hdiv_type"> 
+    <p>High dividend stocks</p>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Dividend (%)</th>
+      <th>Price</th>
+      <th>Change</th>
+    </tr>
+    <% 10.times  do |i| index = @hdiv.length-1-i %>
+    <tr>
+      <td><%= @hdiv[index][2] %></td>
+      <td><%= @hdiv[index][0] %></td>
+      <td><%= @hdiv[index][1] %></td>
+      <td><%= @hdiv[index][3] %></td>
+      <td><%= @hdiv[index][4] %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

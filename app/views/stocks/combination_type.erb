@@ -1,0 +1,27 @@
+
+<div class = "combination_type"> 
+    <p>Combined methods stocks</p>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Growth</th>
+      <th>Dividend (%)</th>
+      <th>PE (Price/Earnings)</th>
+      <th>Price</th>
+      <th>Change</th>
+    </tr>
+    <% @combination.each do |loop_stock|%>
+    <tr>
+      <td><%= loop_stock[2] %></td>
+      <td><%= loop_stock[0] %></td>
+      <td><%= loop_stock[1] %></td>
+      <td><%= loop_stock[5] %></td>
+      <td><%= loop_stock[6] %></td>
+      <td><%= loop_stock[3] %></td>
+      <td><%= loop_stock[4] %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+

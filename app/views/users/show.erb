@@ -1,4 +1,4 @@
-<h1>Welcome back <%= current_user.username.capitalize %>!</h1>
+<h3>Welcome back <%= current_user.username.capitalize %>!</h3>
 <%if @stock%>
   <p>Here is the list of your favorite stocks</p>
   <ul>
@@ -12,10 +12,13 @@
   <p>You have do not have favorite stocks.</p>
 <%end%>
 <h2>Please select the investment you wish to make.</h2>
-<form id = "investment_type">
-	<input class = "high_dividend" type="submit" value="High dividend">
-	<input class = "value" type="submit" value="Value">
-	<input class = "growth" type="submit" value="Growth">
-	<input class = "combination" type="submit" value="Combination">	
+<form>
+	<input class = "investment_type" id = 'hdiv_type' type="submit" value="High dividend">
+	<input class = "investment_type" id = 'value_type' type="submit" value="Value">
+	<input class = "investment_type" id = 'growth_type' type="submit" value="Growth">
+	<input class = "investment_type" id = 'combination_type' type="submit" value="Combination">	
 </form>
-<%= erb :"stocks/show" %>
+
+<div id = "spage">
+  <!-- <%= stocks_page %> -->
+</div>

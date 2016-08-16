@@ -1,0 +1,22 @@
+
+<div class = "growth_type"> 
+    <p>High growth stocks</p>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Growth (%)</th>
+      <th>Price</th>
+      <th>Change</th>
+    </tr>
+    <% 10.times  do |i| index = @growth.length-1-i %>
+    <tr>
+      <td><%= @growth[index][2] %></td>
+      <td><%= @growth[index][0] %></td>
+      <td><%= @growth[index][1] %></td>
+      <td><%= @growth[index][3] %></td>
+      <td><%= @growth[index][4] %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
