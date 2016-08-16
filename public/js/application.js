@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // Put your JavaScript behavior here
-  $('.tabs li').on('click', function(event){
+  $('.investment_type').on('click', function(event){
     event.preventDefault();
 
     //Method 1 (with edge case of clicking tab off)
@@ -29,3 +29,24 @@ $(document).ready(function () {
     $($addr).css('display', 'inline');
   })
 });
+//New code
+
+$(document).ready(function () {
+  sortButtonListener();
+});
+
+
+var sortButtonListener = function () {
+  $(".investment_type").on("click", function (event) {
+    event.preventDefault();
+    console.log($(this));
+    var sortType = $(this).id
+    $.ajax({
+      url: someRoute,
+      data: {sort_type: sortType}
+    }).done(function(response){
+      $("#hdiv").html(response)
+    })
+  })
+  
+}
