@@ -1,38 +1,23 @@
-<h1>Welcome back <%= current_user.username.capitalize %>!</h1>
-
-<p>Here is the list of your favorite stocks</p>
-<ul>
-  <% @stock.each  do |current_stock| %>
-  <li>
-  Name: <%= current_stock.name %>, Symbol: <%= current_stock.symbol %>,   Price: <%= current_stock.bid %>, Change: <%= current_stock.percent_change %>
-  </li>
-  <% end %>
-</ul>
+<h3>Welcome back <%= current_user.username.capitalize %>!</h3>
+<%if @stock%>
+  <p>Here is the list of your favorite stocks</p>
+  <ul>
+    <% @stock.each  do |current_stock| %>
+    <li>
+    Name: <%= current_stock.name %>, Symbol: <%= current_stock.symbol %>,   Price: <%= current_stock.bid %>, Change: <%= current_stock.percent_change %>
+    </li>
+    <% end %>
+  </ul>
+<%else%>
+  <p>You have do not have favorite stocks.</p>
+<%end%>
 <h2>Please select the investment you wish to make.</h2>
-<form id = "investment_type">
-	<input class = "High dividend" type="submit" value="High dividend">
-	<input class = "Stable income" type="submit" value="Stable income">
-	<input class = "Value" type="submit" value="Value">
-	<input class = "Growth" type="submit" value="Growth">
-	<input class = "Analists recomended" type="submit" value="Analists recomended">
-	<input class = "Combination" type="submit" value="Combination">	
+<form>
+	<input class = "investment_type" id = 'hdiv_type' type="submit" value="High dividend">
+	<input class = "investment_type" id = 'value_type' type="submit" value="Value">
+	<input class = "investment_type" id = 'growth_type' type="submit" value="Growth">
+	<input class = "investment_type" id = 'combination_type' type="submit" value="Combination">	
 </form>
 
-
-<div class = "Hdiv"> 
-    <p>High dividend stocks</p>
-    <ul>
-      <% 10.times  do |i| index = @hdiv.length-1-i %>
-      <li>
-      Name: <%= @hdiv[index][2] %>,     Symbol: <%= @hdiv[index][0] %>,     Dividend: <%= @hdiv[index][1] %>,   Price: <%= @hdiv[index][3] %>,  Change: <%= @hdiv[index][4] %>
-      </li>
-      <% end %>
-    </ul>
-
-
-
-
-
-
-
+<div id = "spage">
 </div>

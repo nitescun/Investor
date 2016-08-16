@@ -14,27 +14,7 @@ end
 # Users SHOW
 get '/users/:id' do
   @user = User.find(params[:id])
-  @stocks = []
-  @user.stocks.each do |current_stock|
-    @stocks << current_stock.quote
-  end
-  @stock = StockQuote::Stock.quote(@stocks)
-# High dividend
-  @all_stocks_quote = []
-  Stock.all.each do |current_stock|
-    @all_stocks_quote << current_stock.quote
-  end
-  @all_stocks = StockQuote::Stock.quote(@all_stocks_quote)
-  @hdiv_raw = []
-  @all_stocks.each do |current_stock|
-    if !current_stock.dividend_yield 
-     @hdiv_raw << [current_stock.symbol, 0, current_stock.name, current_stock.bid, current_stock.percent_change]
-    else
-     @hdiv_raw << [current_stock.symbol, current_stock.dividend_yield, current_stock.name, current_stock.bid, current_stock.percent_change]
-   end
-  end 
-  @hdiv = @hdiv_raw.sort_by {|e| e[1]}
-#  @hdiv = @hdiv_raw.sort {|a,b| b[1] <=> a[1]}
+  @stock = @user.favorite_stocks
   erb :'users/show'
 end
 

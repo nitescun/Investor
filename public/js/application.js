@@ -1,31 +1,24 @@
+
 $(document).ready(function () {
-  // Put your JavaScript behavior here
-  $('.tabs li').on('click', function(event){
+  sortButtonListener();
+});
+
+
+var sortButtonListener = function () {
+  $(".investment_type").on("click", function (event) {
     event.preventDefault();
 
-    //Method 1 (with edge case of clicking tab off)
-    var unclicked_tabs = []
-    var selector = function(index, li){
-      if ($(li).attr('id') != $(this).attr('id')){
-        unclicked_tabs.push(li)
-      }
-    };
 
-    $('.tabs li').each(selector.bind(this))
+    var sortType = $(this).attr('id')
 
-    unclicked_tabs.forEach(function(li){
-      $(li).removeClass('active')
+
+    var url = '/stocks?sort_type=' + sortType
+
+
+    $.get(url)
+    .done(function(response){
+      $("#spage").html(response);
     })
-
-    $(this).toggleClass("active");
-
-    //Method 2 (without ability to click tab off)
-    // $('.tabs li').removeClass("active");
-    // $(this).addClass("active");
-
-    //grabs the id in <a href='#id'> tag of active tab
-    var $addr = $('.active a').attr('href');
-    $('.tab-content').css('display', 'none');
-    $($addr).css('display', 'inline');
   })
-});
+  
+}

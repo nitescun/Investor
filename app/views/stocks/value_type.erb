@@ -1,0 +1,22 @@
+
+<div class = "value_type"> 
+    <p>Value stocks</p>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>PE (Price/Earnings)</th>
+      <th>Price</th>
+      <th>Change</th>
+    </tr>
+    <% 10.times  do |i| %>
+    <tr>
+      <td><%= @value[i][2] %></td>
+      <td><%= @value[i][0] %></td>
+      <td><%= @value[i][1] %></td>
+      <td><%= @value[i][3] %></td>
+      <td><%= @value[i][4] %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
