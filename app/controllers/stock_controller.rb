@@ -5,7 +5,6 @@ get '/stocks' do
   @combination =current_user.combination_stocks
   if request.xhr?
     erb :"stocks/#{params[:sort_type]}", layout: false
-    # erb :'users/show', layout: false, locals: {stocks_page: view}
   else
     redirect "/users/#{current_user.id}"
   end

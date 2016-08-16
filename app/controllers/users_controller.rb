@@ -15,8 +15,7 @@ end
 get '/users/:id' do
   @user = User.find(params[:id])
   @stock = @user.favorite_stocks
-  stocks_page = erb :"stocks/show", layout: false
-  erb :'users/show', locals: {stocks_page: stocks_page}
+  erb :'users/show'
 end
 
 # Users EDIT

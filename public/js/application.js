@@ -17,9 +17,7 @@ var sortButtonListener = function () {
 
     $.get(url)
     .done(function(response){
-      console.log(response)
       $("#spage").html(response);
-      // $("#hdiv").html(response)
     })
   })
   
