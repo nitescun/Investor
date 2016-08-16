@@ -6,8 +6,8 @@ $(document).ready(function () {
     //Method 1 (with edge case of clicking tab off)
     var unclicked_tabs = []
     var selector = function(index, li){
-      if ($(li).attr('id') != $(this).attr('id')){
         unclicked_tabs.push(li)
+      if ($(li).attr('id') != $(this).attr('id')){
       }
     };
 

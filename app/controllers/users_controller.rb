@@ -16,6 +16,9 @@ get '/users/:id' do
   @user = User.find(params[:id])
   @stock = @user.favorite_stocks
   @hdiv = @user.high_dividend
+  @value = @user.value_stocks
+  @growth = @user.growth_stocks
+  @combination = @user.combination_stocks
   erb :'users/show'
 end
 

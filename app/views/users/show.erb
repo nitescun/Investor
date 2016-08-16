@@ -13,28 +13,9 @@
 <%end%>
 <h2>Please select the investment you wish to make.</h2>
 <form id = "investment_type">
-	<input class = "High dividend" type="submit" value="High dividend">
-	<input class = "Value" type="submit" value="Value">
-	<input class = "Growth" type="submit" value="Growth">
-	<input class = "Analists recomended" type="submit" value="Analists recomended">
-	<input class = "Combination" type="submit" value="Combination">	
+	<input class = "high_dividend" type="submit" value="High dividend">
+	<input class = "value" type="submit" value="Value">
+	<input class = "growth" type="submit" value="Growth">
+	<input class = "combination" type="submit" value="Combination">	
 </form>
-
-
-<div class = "Hdiv"> 
-    <p>High dividend stocks</p>
-    <ul>
-      <% 10.times  do |i| index = @hdiv.length-1-i %>
-      <li>
-      Name: <%= @hdiv[index][2] %>,     Symbol: <%= @hdiv[index][0] %>,     Dividend: <%= @hdiv[index][1] %>,   Price: <%= @hdiv[index][3] %>,  Change: <%= @hdiv[index][4] %>
-      </li>
-      <% end %>
-    </ul>
-
-
-
-
-
-
-
-</div>
+<%= erb :"stocks/show" %>
