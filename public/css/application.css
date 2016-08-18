@@ -1,3 +1,73 @@
+body {
+    background-image:    url(../images/beach.jpg);
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    /*background-position: center center;              /* optional, center the image */*/
+}
+
+h2 {
+	color: gold;
+}
+
+
+h3 {
+	color: gold;
+	text-align: center;
+	position: absolute;
+    top: 10%; bottom:90%; left: 0; right:0;
+ 	padding: 5% 20px 20px 20px;
+}
+
+.welcome {
+	color: gold;
+	text-align: center;
+	position: absolute;
+    top: 10%; bottom:90%; left: 0; right:0;
+ 	padding: 5% 20px 20px 20px;
+    text-shadow: 2px 2px 8px #0000ff;
+}
+
+p {
+	font-size: 20px;
+    font-weight: bold;
+	color: gold;
+}
+
+.user_info {
+	color: gold;
+	position: absolute;
+	font-size: 15px;
+    top: 10%; bottom:90%; left: 0; right:0;
+ 	padding: 5% 20px 20px 20px;
+    text-shadow: 2px 2px 8px #0000ff;
+
+	margin-bottom: 10%;
+}
+
+#spage {
+	/*color: grey;*/
+	position: float;
+	font-size: 20px;
+    top: 100%; bottom:0%; left: 0; right:0;
+ 	padding: 20% 20px 20px 20px;
+ 	
+}
+
+#spage table {
+	background-color: rgba(255,255,255,.3)
+}
+
+.session {
+	margin-left: 90%;
+}
+
+.app_name {
+	color: gold;
+	text-align: center;
+	font-size: 70px;
+	position: absolute;
+    top: 0%; bottom:100%; left: 0; right:0;
+}
 .container {
   margin: 20px auto;
   width: 600px;
@@ -10,4 +80,12 @@ th {
 
 .tab-content {
     display: none;
+}
+
+a:visited {
+    color: gold;
+}
+
+a:link {
+    color: gold;
 }

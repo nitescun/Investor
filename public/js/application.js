@@ -8,7 +8,6 @@ var sortButtonListener = function () {
   $(".investment_type").on("click", function (event) {
     event.preventDefault();
 
-
     var sortType = $(this).attr('id')
 
 
