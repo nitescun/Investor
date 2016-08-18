@@ -20,8 +20,10 @@
 </head>
 <body>
   <header>
-    <h1>Easinvest</h1>
-    <%= erb :"sessions/new" %>
+    <h1 class = "app_name"> Easinvest</h1>
+    <div class = "session">
+      <%= erb :"sessions/new" %>
+    </div>
   </header>
   <%= yield %>
 </body>
