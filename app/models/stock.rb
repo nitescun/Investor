@@ -35,7 +35,7 @@ class Stock < ActiveRecord::Base
     @growth_raw = []
     self.all_stocks.each do |loop_stock|
       if loop_stock.eps_estimate_current_year && loop_stock.eps_estimate_next_year
-       @growth_raw << [loop_stock.symbol, (loop_stock.eps_estimate_current_year/loop_stock.eps_estimate_next_year)*100.round(2), loop_stock.name, loop_stock.bid, loop_stock.percent_change]
+       @growth_raw << [loop_stock.symbol, ((loop_stock.eps_estimate_current_year/loop_stock.eps_estimate_next_year)*100).round(2), loop_stock.name, loop_stock.bid, loop_stock.percent_change]
      end
     end
     @growth_raw.sort_by {|e| e[1]}
@@ -46,7 +46,7 @@ class Stock < ActiveRecord::Base
     self.all_stocks.each do |loop_stock|
       if loop_stock.dividend_yield && loop_stock.pe_ratio && loop_stock.bid && loop_stock.eps_estimate_current_year && loop_stock.eps_estimate_next_year
         if loop_stock.dividend_yield >10 && loop_stock.pe_ratio <10 && (loop_stock.eps_estimate_current_year/loop_stock.eps_estimate_next_year)*100 > 10
-         @combination_raw << [loop_stock.symbol, (loop_stock.eps_estimate_current_year/loop_stock.eps_estimate_next_year)*100.round(2), loop_stock.name, loop_stock.bid, loop_stock.percent_change, loop_stock.dividend_yield, loop_stock.pe_ratio]
+         @combination_raw << [loop_stock.symbol, ((loop_stock.eps_estimate_current_year/loop_stock.eps_estimate_next_year)*100).round(2), loop_stock.name, loop_stock.bid, loop_stock.percent_change, loop_stock.dividend_yield, loop_stock.pe_ratio]
         end
       end
     end
