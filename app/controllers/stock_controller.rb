@@ -1,8 +1,9 @@
 get '/stocks' do
-  @hdiv =current_user.high_dividend
-  @value =current_user.value_stocks
-  @growth =current_user.growth_stocks
-  @combination =current_user.combination_stocks
+  tempstock = Stock.new
+  @hdiv =tempstock.high_dividend
+  @value =tempstock.value_stocks
+  @growth =tempstock.growth_stocks
+  @combination =tempstock.combination_stocks
   if request.xhr?
     erb :"stocks/#{params[:sort_type]}", layout: false
   else

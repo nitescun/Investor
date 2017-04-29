@@ -1,4 +1,24 @@
+<div>
+  <h1 class = "app_name"> Easinvest</h1>
+  <!-- <div class = "session">
+    <%= erb :"sessions/new" %>
+  </div> -->
+</div>
 <div class = "welcome">
-    <h2>Now you can play like a pro on the stock market!</h2> 
+    <h2>Now you can play like a pro on the stock market!</h2>
     <h2>With us everything is easy.</h2>
+</div>
+<div class = "user_info">
+  <h3>Please select the investment you wish to make and wait a few seconds.</h3>
+  <form>
+    <input class = "investment_type" id = 'hdiv_type' type="submit" value="High dividend">
+    <input class = "investment_type" id = 'value_type' type="submit" value="Value">
+    <input class = "investment_type" id = 'growth_type' type="submit" value="Growth">
+    <input class = "investment_type" id = 'combination_type' type="submit" value="Combination">
+  </form>
+</div>
+<div id = "spage">
+</div>
+<div class = "warning">
+  <p> This site provide information based on current market parameters. There is no profit warranty.</p>
 </div>

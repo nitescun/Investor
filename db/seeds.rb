@@ -1,88 +1,53 @@
 list = {'AG Mortgage Investment Trust Inc  	'=>'MITT',
-'Align Technology, Inc.  	'=>'ALGN',
-'Allegiant Travel Company  	'=>'ALGT',
+'AGNC Investment Corp  '=>'AGNC',
+'Alibaba Group Holding Ltd  '=>'BABA',
 'Alphabet Inc  	'=>'GOOGL',
 'Ambac Financial Group, Inc.  	'=>'ABKFQ',
-'American Railcar Industries, Inc.  	'=>'ARII',
-'Apple Inc.  	'=>'AAPL',
+'Annaly Capital Management, Inc.  '=>'NLY',
+'Axis Capital Holdings Limited  '=>'AXS',
 'AutoZone, Inc.  	'=>'AZO',
-'Baidu Inc (ADR)  	'=>'BIDU',
+'Bank of America Corp  '=>'BAC',
 'Berkshire Hathaway Inc.  	'=>'BRK.B',
-'Biogen Inc  	'=>'BIIB',
-'BioNovelus Inc  	'=>'FINW',
-'BlackRock, Inc.  	'=>'BLK',
 'BP Prudhoe Bay Royalty Trust  	'=>'BPT',
-'Broadcom Ltd  	'=>'AVGO',
-'Canadian Imperial Bank of Commerce (USA)  	'=>'CM',
-'Catamaran Corp (USA)  	'=>'CTRX',
-'Charter Communications, Inc.  	'=>'CHTR',
-'Chesapeake Granite Wash Trust  	'=>'CHKR',
-'Chimera Investment Corporation  	'=>'CIM',
+'Camden Property Trust  '=>'CPT',
+'Camping World Holdings Inc  '=>'CWH',
+'Cherry Hill Mortgage Investment Corp  '=>'CHMI',
+'Chuy Holdings Inc  '=>'CHUY',
 'Cornerstone Progressive Return Fund  	'=>'CFP',
-'Costamare Inc  	'=>'CMRE',
-'Credit Acceptance Corp.  	'=>'CACC',
-'CVR Energy, Inc.  	'=>'CVI',
-'CVR Partners LP  	'=>'UAN',
-'CVR Refining LP  	'=>'CVRR',
-'DHT Holdings Inc  	'=>'DHT',
+'Echostar Corporation  '=>'SATS',
+'Equity Commonwealth  '=>'EQC',
 'Everest Re Group Ltd  	'=>'RE',
-'Frontline Ltd.  	'=>'FRO',
+'Five Below Inc  '=>'FIVE',
 'Golar LNG Partners LP  	'=>'GMLP',
-'Great Basin Scientific Inc  	'=>'GBSN',
-'HIGH PERFORMANCE B COM USD0.001(POST REV SPLIT  	'=>'TBEV',
-'Intuitive Surgical, Inc.  	'=>'ISRG',
-'IPG Photonics Corporation  	'=>'IPGP',
-'Keurig Green Mountain Inc  	'=>'GMCR',
-'Koninklijke KPN N.V. (ADR)  	'=>'KKPNY',
-'Ladder Capital Corp  	'=>'LADR',
-'Lear Corporation  	'=>'LEA',
-'LeMaitre Vascular Inc  	'=>'LMAT',
-'Lululemon Athletica inc.  	'=>'LULU',
-'Martin Midstream Partners L.P.  	'=>'MMLP',
-'Mercadolibre Inc  	'=>'MELI',
-'Mettler-Toledo International Inc.  	'=>'MTD',
-'Monotype Imaging Holdings Inc.  	'=>'TYPE',
-'Navios Maritime Acquisition Corporation  	'=>'NNA',
-'Navios Maritime Midstream Partners LP  	'=>'NAP',
-'New Oriental Education & Tech Grp (ADR)  	'=>'EDU',
+'Gentherm Inc  '=>'THRM',
+'iShares NASDAQ Biotechnology Index (ETF)  '=>'IBB',
+'Liberty Expedia Holdings Inc  '=>'LEXEA',
+'Manulife Financial Corporation (USA)  '=>'MFC',
 'New Residential Investment Corp  	'=>'NRZ',
-'New York Mortgage Trust Inc  	'=>'NYMT',
 'Northern Tier Energy LP  	'=>'NTI',
-'Pacific Coast Oil Trust  	'=>'ROYT',
-'PennyMac Mortgage Investment Trust  	'=>'PMT',
+'Oxford Lane Capital Corp  '=>'OXLC',
+'PerkinElmer, Inc.  '=>'PKI',
+'Premier Inc  '=>'PINC',
 'Priceline Group Inc  	'=>'PCLN',
-'Prospect Capital Corporation  	'=>'PSEC',
-'Resource Capital Corp.  	'=>'RSO',
-'SandRidge Mississippian Trust II  	'=>'SDR',
-'SandRidge Permian Trust  	'=>'PER',
-'Seven Arts Entertainment Inc  	'=>'SAPX',
-'Shanda Interactive Entertainment Ltd ADR  	'=>'SNDA',
+'Qihoo 360 Technology Co Ltd  '=>'QIHU',
+'Sensata Technologies Holding N.V.  '=>'ST',
 'Ship Finance International Limited  	'=>'SFL',
-'Sturm, Ruger & Company  	'=>'RGR',
 'SunCoke Energy Partners LP  	'=>'SXCP',
-'SuperMedia Inc  	'=>'SPMD',
-'TAL International Group, Inc.  	'=>'TAL',
-'Taro Pharmaceutical Industries Ltd.  	'=>'TARO',
-'The Hackett Group, Inc.  	'=>'HCKT',
-'Toyota Motor Corp (ADR)  	'=>'TM',
-'Turkcell Iletisim Hizmetleri A.S. (ADR)  	'=>'TKC',
-'Ulta Salon, Cosmetics & Fragrance, Inc.  	'=>'ULTA',
-'United Continental Holdings Inc  	'=>'UAL',
-'United Therapeutics Corporation  	'=>'UTHR',
-'Viaderma Inc  	'=>'VDRM',
-'Virtusa Corporation  	'=>'VRTU'}
+'Sutherland Asset Management Corp  '=>'SLD',
+'TPG Specialty Lending Inc  '=>'TSLX',
+'Ubiquiti Networks Inc  '=>'UBNT',
+'Waddell & Reed Financial, Inc.  '=>'WDR'}
 list.each do |key,val|
 	# current_stock = StockQuote::Stock.quote(val)
-	Stock.create(quote: val) 
-	# Stock.create(quote: val, stockname: key) 
+	Stock.create(quote: val)
+	# Stock.create(quote: val, stockname: key)
 end
 
 User.create(username: 'Tom', email: 't@dbc.com', password: "123")
-User.create(username: 'Jim', email: 'j@dbc.com', password: "123")  
+User.create(username: 'Jim', email: 'j@dbc.com', password: "123")
 User.create(username: 'Bob', email: 'b@dbc.com', password: "123")
-Type.create(typename: 'dividend') 
-Type.create(typename: 'value') 
-Favorite.create(user: User.find_by(id: 1), stock: Stock.find_by(id: 1), type: Type.find_by(id: 1) ) 
-Favorite.create(user: User.find_by(id: 1), stock: Stock.find_by(id: 2), type: Type.find_by(id: 1)) 
-Favorite.create(user: User.find_by(id: 2), stock: Stock.find_by(id: 3), type: Type.find_by(id: 2) ) 
-
+Type.create(typename: 'dividend')
+Type.create(typename: 'value')
+Favorite.create(user: User.find_by(id: 1), stock: Stock.find_by(id: 1), type: Type.find_by(id: 1) )
+Favorite.create(user: User.find_by(id: 1), stock: Stock.find_by(id: 2), type: Type.find_by(id: 1))
+Favorite.create(user: User.find_by(id: 2), stock: Stock.find_by(id: 3), type: Type.find_by(id: 2) )
